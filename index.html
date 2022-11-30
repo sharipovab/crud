@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="vue2.js"></script>
+    <script src="router3.js"></script>
+    <script src="template2.js"></script>
+    <script src="component.js"></script>
+    <script src="postcreate.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="edit.js"></script>
+    <title>CRUD</title>
+    <link rel="shortcut icon" href="vue.png" type="image/x-icon">
+</head>
+<body>
+
+    <div id="container" class="root">
+        <post></post>
+        <router-view></router-view>
+    </div>
+
+ <script type="text/javascript">
+  
+  var routes = [
+    {path: '/posts', component: Posts},
+    {path: '/create', component: CreatePost},
+    {path: '/edit/:numb', component: Edit},
+  ];
+
+  var router = new VueRouter({
+    routes: routes,
+  });
+
+  var app = new Vue({
+   el: '.root',
+   router: router
+  });
+
+ </script>
+</body>
+</html>
