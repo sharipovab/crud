@@ -1,6 +1,7 @@
 var Edit = {
     template: `
     <div class="root container mt-3">
+        <div class="text-center mb-3"><span class="upd fs-3"></span></div>
         <div class="mb-3">
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title..." v-model="title">
         </div>
@@ -56,6 +57,9 @@ var Edit = {
                 this.title = result.data.title;
                 this.info = result.data.info;
                 this.image = result.data.image;
+                var data = result.data;                
+                
+                alert(data);
             })
         },
         selectFile(event){
@@ -63,12 +67,3 @@ var Edit = {
         },
     }
 }
-
-
-{/* <div class="form">
-        <input type="text" name="" id="text"  v-model="title">
-        <textarea name="" id="message" cols="30" rows="10" v-model="info"></textarea>
-        <input type="file" name="" id="file"" @change="selectFile">
-        <div class="divimage"><img :src="'https://getty.uz/'+image" class="edimage"></div>
-        <button @click="send_upd">Edit</button>
-</div> */}

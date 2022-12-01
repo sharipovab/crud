@@ -42,6 +42,9 @@ var Posts = {
             .then(response => response.json())
             .then(result =>{
                  console.log(result); 
+                 var data3 = result.data;                
+                
+                 alert(data3);
             })
             }          
         }

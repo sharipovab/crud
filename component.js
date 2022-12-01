@@ -1,6 +1,7 @@
 var CreatePost = {
     template: `
     <div class="root container mt-3">
+        <div class="text-center mb-3"><span class="upd2 fs-3"></span></div>
         <div class="mb-3">
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title..." v-model="title">
         </div>
@@ -41,15 +42,10 @@ var CreatePost = {
             .then(response => response.json())
             .then(result => {
                 console.log(result);
+                var data2 = result.data;                
+                
+                alert(data2);
             })
         }
     }
 }
-
-
-{/* <div class="form">
-        <input type="text" name="" id="text" v-model="title">
-        <textarea name="" id="message" cols="30" rows="10" v-model="info"></textarea>
-        <input type="file" name="" id="file" @change="selectFile($event )">
-        <button @click="sendData">Send</button>
-</div> */}
